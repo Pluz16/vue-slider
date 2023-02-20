@@ -12,25 +12,47 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 <body>
-    <div class="my-carousel-controls">
+    <div id="root">
+		<h1>{{movie.title}}</h1>
+		<div class="my-carousel-container">
+			<div class="my-carousel">
+				<div class="my-carousel-main" id="slides-container">
+					<img :src="movie.images[movie.activeImage]" alt="MainImage">
+				</div>
 
-        <button class="btn btn-outline-dark" id="prev" @click="previous()">
-            <i class="fa-solid fa-chevron-left"></i>
-        </button>
+				<div class="my-carousel-thumbs" id="thumbs-container">
+					<img :src="image" v-for="(image, index) in movie.images" class="thumb"
+						:class="(index == movie.activeImage) ? 'active' : ''" @click=switchActive(index)
+						alt="thumbnails">
+				</div>
+			</div>
 
-        <button class="btn btn-outline-dark" id="inverti-autoplay">
-            <i class="fa-solid fa-repeat"></i>
-        </button>
+			<div>
+				<h2>Title: {{movie.title}}</h2>
+				<p>Category: {{movie.category}}</p>
+				<p>Length: {{movie.length}} minutes</p>
+			</div>
 
-        <button class="btn btn-outline-dark" id="stop-autoplay">
-            <i class="fa-solid fa-stop"></i>
-        </button>
+			<div class="my-carousel-controls">
 
-        <button class="btn btn-outline-dark" id="next" @click="next()">
-            <i class="fa-solid fa-chevron-right"></i>
-        </button>
-    </div>
+				<button class="btn btn-outline-dark" id="prev" @click="previous()">
+					<i class="fa-solid fa-chevron-left"></i>
+				</button>
 
+				<button class="btn btn-outline-dark" id="inverti-autoplay">
+					<i class="fa-solid fa-repeat"></i>
+				</button>
+
+				<button class="btn btn-outline-dark" id="stop-autoplay">
+					<i class="fa-solid fa-stop"></i>
+				</button>
+
+				<button class="btn btn-outline-dark" id="next" @click="next()">
+					<i class="fa-solid fa-chevron-right"></i>
+				</button>
+			</div>
+		</div>
+	</div>
 
 
 </body>
