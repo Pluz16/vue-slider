@@ -12,9 +12,26 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 <body>
-    
+    <div class="my-carousel-controls">
+
+        <button class="btn btn-outline-dark" id="prev" @click="previous()">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <button class="btn btn-outline-dark" id="inverti-autoplay">
+            <i class="fa-solid fa-repeat"></i>
+        </button>
+
+        <button class="btn btn-outline-dark" id="stop-autoplay">
+            <i class="fa-solid fa-stop"></i>
+        </button>
+
+        <button class="btn btn-outline-dark" id="next" @click="next()">
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+    </div>
 
 
-    
+
 </body>
 </html>
