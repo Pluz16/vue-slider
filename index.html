@@ -13,24 +13,24 @@
 </head>
 <body>
     <div id="root">
-		<h1>{{movie.title}}</h1>
+		<h1>{{games.title}}</h1>
 		<div class="my-carousel-container">
 			<div class="my-carousel">
 				<div class="my-carousel-main" id="slides-container">
-					<img :src="movie.images[movie.activeImage]" alt="MainImage">
+					<img :src="games.images[games.activeImage]" alt="MainImage">
 				</div>
 
 				<div class="my-carousel-thumbs" id="thumbs-container">
-					<img :src="image" v-for="(image, index) in movie.images" class="thumb"
-						:class="(index == movie.activeImage) ? 'active' : ''" @click=switchActive(index)
+					<img :src="image" v-for="(image, index) in games.images" class="thumb"
+						:class="(index == games.activeImage) ? 'active' : ''" @click=switchActive(index)
 						alt="thumbnails">
 				</div>
 			</div>
 
 			<div>
-				<h2>Title: {{movie.title}}</h2>
-				<p>Category: {{movie.category}}</p>
-				<p>Length: {{movie.length}} minutes</p>
+				<h2>Title: {{games.title}}</h2>
+				<p>Category: {{games.category}}</p>
+				<p>Discount: {{games.sconto}} %</p>
 			</div>
 
 			<div class="my-carousel-controls">
